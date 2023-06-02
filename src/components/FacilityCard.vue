@@ -7,27 +7,31 @@ defineProps({
 </script>
 
 <template>
-    <div>
+    <div class="card">
         <h1>{{ sigla }}</h1>
-        <h4>{{ nome }}</h4>
-        <p>{{ descricao }}</p>
+        <div>
+            <h4>{{ nome }}</h4>
+            <p>{{ descricao }}</p>
+        </div>
     </div>
 </template>
 
 <style scoped>
-div{
+.card{
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #99B6D0;
     padding-bottom: 20px;
     margin-top: 40px;
+    /* max-width: 450px; */
 }
 h1{
-    width: 100px;
+    width: 120px;
+    min-width: 120px;
     margin: auto;
     text-align: center;
-    height: 100px;
-    line-height: 100px;
+    height: 120px;
+    line-height: 120px;
     background-color: #99B6D0;
     color: white;
     border-radius: 50%;
@@ -37,5 +41,20 @@ h4{
 }
 p{
     text-align: justify;
+}
+@media (min-width: 480px) {
+    .card{
+        display: flex;
+        gap: 25px;
+    }
+    h4{
+        text-align: left;
+    }
+}
+@media (min-width: 1070px){
+    .card{
+        border-style: none;
+        max-width: 47.5%;
+    }
 }
 </style>

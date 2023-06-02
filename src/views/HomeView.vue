@@ -29,3 +29,13 @@ const facilities = [
         <FacilityCard v-for="(facility, i) in facilities" :key="i" v-bind="facility"/>
     </section>
 </template>
+
+<style scoped>
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    justify-content: space-between;
+}
+</style>

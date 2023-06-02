@@ -3,26 +3,35 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-    <header>
-        <div class="menu">
-            <RouterLink to="/">
-                <h2>Tô doente, onde vou?</h2>
+    <div>
+        <header>
+            <div class="menu">
+                <RouterLink to="/">
+                    <h2>Tô doente,</h2>
+                    <h2>onde vou?</h2>
+                </RouterLink>
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                <div>
+                    <RouterLink to="/">Início</RouterLink>
+                    <RouterLink to="/about">Sobre</RouterLink>
+                    <RouterLink to="/coisa1">coisa1</RouterLink>
+                    <RouterLink to="/coisa2">coisa2</RouterLink>
+                </div>
+            </div>
+            <h3>Tá doente?</h3>
+            <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento</p>
+            <RouterLink to="/sintomas">
+                <button>Cadastrar sintomas</button>
             </RouterLink>
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-        </div>
-        <h3>Tá doente?</h3>
-        <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento</p>
-        <RouterLink to="/sintomas">
-            <button>Cadastrar sintomas</button>
-        </RouterLink>
-    </header>
-    <main>
-        <RouterView v-slot="{ Component }" >
-            <Transition name="slide-fade" mode="out-in">
-                <component :is="Component"/>
-            </Transition>
-        </RouterView>
-    </main>
+        </header>
+        <main>
+            <RouterView v-slot="{ Component }" >
+                <Transition name="slide-fade" mode="out-in">
+                    <component :is="Component"/>
+                </Transition>
+            </RouterView>
+        </main>
+    </div>
     <footer>
         <p>Lorem ipsum dolor sit amet.</p>
         <div class="socials">
@@ -44,16 +53,13 @@ import { RouterLink, RouterView } from 'vue-router'
 header{
     color: white;
     background-color: #6684A0;
-    padding: 40px;
+    padding: 40px 10%;
     fill: white;
 }
 .menu{
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
-}
-.menu a{
-    width: 40%;
 }
 .menu h2{
     margin: 0;
@@ -62,6 +68,10 @@ header{
     height: 40px;
     cursor: pointer;
 }
+.menu div{
+    display: none;
+    gap: 40px;
+}
 header button{
     padding: 13px 20px;
     font-weight: bold;
@@ -69,6 +79,7 @@ header button{
     border-style: none;
     background-color: #99B6D0;
     margin-top: 20px;
+    cursor: pointer;
 }
 main{
     width: 80%;
@@ -83,9 +94,25 @@ footer{
 .socials{
     display: flex;
     justify-content: center;
-    gap: 20px
+    gap: 20px;
+}
+.socials a{
+    height: 25px;
 }
 .socials svg{
-    height: 25px;
+    height: 100%;
+}
+@media (min-width: 480px) {
+    .menu svg{
+        display: none;
+    }
+    .menu div{
+        display: flex;
+    }
+    footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 </style>
