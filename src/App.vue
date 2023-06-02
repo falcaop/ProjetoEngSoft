@@ -72,7 +72,7 @@ header button{
 }
 main{
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
 }
 footer{
     color: white;

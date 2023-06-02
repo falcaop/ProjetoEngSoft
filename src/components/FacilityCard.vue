@@ -19,5 +19,23 @@ div{
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #99B6D0;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
+h1{
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    background-color: #99B6D0;
+    color: white;
+    border-radius: 50%;
+}
+h4{
+    text-align: center;
+}
+p{
+    text-align: justify;
 }
 </style>
