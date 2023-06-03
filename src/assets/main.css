@@ -1,3 +1,7 @@
+:root{
+    --blue: #6684A0;
+    --light-blue: #99B6D0;
+}
 body {
     color: black;
     margin: 0;

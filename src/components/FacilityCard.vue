@@ -20,7 +20,7 @@ defineProps({
 .card{
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #99B6D0;
+    border-bottom-color: var(--light-blue);
     padding-bottom: 20px;
     margin-top: 40px;
     /* max-width: 450px; */
@@ -32,7 +32,7 @@ h1{
     text-align: center;
     height: 120px;
     line-height: 120px;
-    background-color: #99B6D0;
+    background-color: var(--light-blue);
     color: white;
     border-radius: 50%;
 }
