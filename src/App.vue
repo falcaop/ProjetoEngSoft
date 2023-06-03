@@ -39,13 +39,13 @@ import IconMenu from './components/icons/IconMenu.vue';
     <footer>
         <p>Lorem ipsum dolor sit amet.</p>
         <div class="socials">
-            <a href="#">
+            <a href="https://facebook.com">
                 <IconFacebook/>
             </a>
-            <a href="#">
+            <a href="https://twitter.com">
                 <IconTwitter/>
             </a>
-            <a href="#">
+            <a href="https://instagram.com">
                 <IconInstagram/>
             </a>
         </div>
@@ -76,6 +76,12 @@ header{
     display: none;
     gap: 40px;
 }
+.menu div a{
+    transition: .3s;
+}
+.menu div a:hover{
+    color: var(--light-blue);
+}
 header button{
     padding: 13px 20px;
     font-weight: bold;
@@ -84,6 +90,10 @@ header button{
     background-color: var(--light-blue);
     margin-top: 20px;
     cursor: pointer;
+    transition: .3s;
+}
+header button:hover{
+    background-color: hsl(208, 37%, 65%);
 }
 main{
     width: 80%;
@@ -93,7 +103,6 @@ footer{
     color: white;
     background-color: var(--blue);
     padding: 20px 40px;
-    fill: white;
 }
 .socials{
     display: flex;
@@ -105,6 +114,11 @@ footer{
 }
 .socials svg{
     height: 100%;
+    fill: white;
+    transition: .3s;
+}
+.socials svg:hover{
+    fill: var(--light-blue);
 }
 @media (min-width: 480px) {
     .menu svg{
