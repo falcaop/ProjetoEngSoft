@@ -102,7 +102,7 @@ main{
 footer{
     color: white;
     background-color: var(--blue);
-    padding: 20px 40px;
+    padding: 20px 10%;
 }
 .socials{
     display: flex;
