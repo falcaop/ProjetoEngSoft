@@ -15,12 +15,12 @@ import IconMenu from './components/icons/IconMenu.vue';
                     <h2>onde vou?</h2>
                 </RouterLink>
                 <IconMenu/>
-                <div>
+                <nav>
                     <RouterLink to="/">Início</RouterLink>
                     <RouterLink to="/about">Sobre</RouterLink>
                     <RouterLink to="/coisa1">coisa1</RouterLink>
                     <RouterLink to="/coisa2">coisa2</RouterLink>
-                </div>
+                </nav>
             </div>
             <h3>Tá doente?</h3>
             <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento</p>
@@ -72,14 +72,15 @@ header{
     height: 40px;
     cursor: pointer;
 }
-.menu div{
+.menu nav{
     display: none;
-    gap: 40px;
+    gap: 20%;
+    justify-content: right;
 }
-.menu div a{
+.menu nav a{
     transition: .3s;
 }
-.menu div a:hover{
+.menu nav a:hover{
     color: var(--light-blue);
 }
 header button{
@@ -121,16 +122,18 @@ footer{
     fill: var(--light-blue);
 }
 @media (min-width: 480px) {
-    .menu svg{
-        display: none;
-    }
-    .menu div{
-        display: flex;
-    }
     footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+@media (min-width: 736px){
+    .menu svg{
+        display: none;
+    }
+    .menu nav{
+        display: flex;
     }
 }
 </style>
