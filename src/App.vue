@@ -18,8 +18,8 @@ import IconMenu from './components/icons/IconMenu.vue';
                 <nav>
                     <RouterLink to="/">Início</RouterLink>
                     <RouterLink to="/about">Sobre</RouterLink>
-                    <RouterLink to="/coisa1">coisa1</RouterLink>
-                    <RouterLink to="/coisa2">coisa2</RouterLink>
+                    <RouterLink to="/coisa1">Unidades</RouterLink>
+                    <RouterLink to="/coisa2">Sintomas</RouterLink>
                 </nav>
             </div>
             <h3>Tá doente?</h3>
