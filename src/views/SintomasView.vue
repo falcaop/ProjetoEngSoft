@@ -18,7 +18,7 @@ const info = ref({
 <template>
     <section>
         <h2>Cadastro de sintomas</h2>
-        <div>Informe seu endereço e selecione os sintomas que está sentindo para receber uma recomendação de unidade de atendimento.</div>
+        <p>Informe seu endereço e selecione os sintomas que está sentindo para receber uma recomendação de unidade de atendimento.</p>
         <form>
             <h3>Localização</h3>
             <div class='address'>
@@ -94,6 +94,9 @@ strong{
 }
 .locationCheck > input[type="checkbox"]{
     margin: 0 0.5em 0 0;
+}
+section > p{
+    margin: 1.5em 0 2em;
 }
 
 </style>

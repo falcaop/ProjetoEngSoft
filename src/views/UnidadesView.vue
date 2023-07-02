@@ -15,9 +15,10 @@ const info = ref({
 <template>
     <section>
         <h2>Unidades de atendimento</h2>
+        <p>Encontramos as melhores opções de unidades de atendimentos próximas a você.</p>
         <div class="content">
             <div class="unidades">
-                <p>Encontramos as melhores opções de unidades de atendimentos próximas a você.</p>
+                
                 <div class="unidade" v-for="unidade in info">
                     <h3> {{ unidade.nome }} </h3>
                     <p>{{ unidade.endereco }}</p>
@@ -52,6 +53,9 @@ const info = ref({
 }
 .map img{
     width: 100%;
+}
+section > p{
+    margin: 1.5em 0 2em;
 }
 
 @media screen and (max-width: 1023px) {
