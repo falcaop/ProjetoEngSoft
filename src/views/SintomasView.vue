@@ -1,5 +1,8 @@
 <script setup>
 import { watch, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const intensidade = ['Baixa', 'Média', 'Alta'];
 const sintomas = ['dor de cabeca', 'nausea'];
@@ -13,6 +16,9 @@ const info = ref({
         'intensidade': 0,
     },
 });
+const submitForm = () =>{
+    router.push('/unidades')
+}
 </script>
 
 <template>
@@ -43,11 +49,17 @@ const info = ref({
                     <strong>{{ intensidade[info[sintoma].intensidade] }}</strong>
                 </div>
             </div>
+            <div class="submit">
+                <input type="button" value="Finalizar" @click.prevent.stop="submitForm">
+            </div>
         </form>
     </section>
 </template>
 
 <style scoped>
+.submit{
+    text-align: right;
+}
 .sintoma, .address{
     background-color: var(--light-blue);
     width: 100%;
@@ -65,6 +77,7 @@ const info = ref({
 input[type="checkbox"]{
     width: 1.5em;
     height: 1.5em;
+    cursor: pointer;
 }
 input[type="address"]{
     width: 100%;
@@ -98,5 +111,23 @@ strong{
 section > p{
     margin: 1.5em 0 2em;
 }
-
+input[type="button"]{
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;
+    font-size: 1.05em;
+}
+input[type="button"]:hover{
+    background-color: #5171a1;
+    transition: .3s;
+}
+@media screen and (max-width: 767px) {
+    input[type="button"]{
+        width: 50%;
+    }
+}
 </style>

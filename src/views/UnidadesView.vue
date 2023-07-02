@@ -14,6 +14,7 @@ const mapsURL = ref('');
                 <div v-for="unidade in unidades" class="unidade" @click="mapsURL = unidade.mapsURL">
                     <h3> {{ unidade.nome }} </h3>
                     <p>{{ unidade.endereco }}</p>
+                    <p><strong>Horário de funcionamento: </strong>{{ unidade.horario }}</p>
                 </div>
             </div>
             <div class="map">
@@ -37,6 +38,11 @@ const mapsURL = ref('');
     margin: 0 auto 1em;
     border-radius: 7px;
     padding: 1.5em;
+    cursor: pointer;
+}
+.unidade:hover{
+    background-color: var(--lighter-blue);
+    transition: .3s;
 }
 
 .map{

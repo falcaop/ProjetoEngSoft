@@ -24,7 +24,7 @@ import IconMenu from './components/icons/IconMenu.vue';
             <h3>Tá doente?</h3>
             <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento.</p>
             <RouterLink to="/sintomas">
-                <button>Começar</button>
+                <button class="start">Começar</button>
             </RouterLink>
         </header>
         <main>
@@ -115,6 +115,9 @@ footer{
 }
 .socials svg:hover{
     fill: var(--light-blue);
+}
+.start{
+    font-size: 1.05em;
 }
 @media (min-width: 480px) {
     footer{
