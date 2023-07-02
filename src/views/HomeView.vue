@@ -3,22 +3,22 @@ import FacilityCard from '../components/FacilityCard.vue';
 const facilities = [
     {
         sigla: 'UBS',
-        nome: 'Unidade Básica de Atendimento',
+        nome: 'Unidade Básica de Saúde',
         descricao: 'são locais onde os usuários do SUS podem receber atendimento médico para diagnóstico e tratamento de cerca de 80% dos problemas de saúde. É nessas unidades que a população tem acesso a medicamentos gratuitos e vacinas, etc.',
     },
     {
         sigla: 'UBS',
-        nome: 'Unidade Básica de Atendimento',
+        nome: 'UBS São José',
         descricao: 'são locais onde os usuários do SUS podem receber atendimento médico para diagnóstico e tratamento de cerca de 80% dos problemas de saúde. É nessas unidades que a população tem acesso a medicamentos gratuitos e vacinas, etc.',
     },
     {
         sigla: 'UBS',
-        nome: 'Unidade Básica de Atendimento',
+        nome: 'UBS Santa Felícia - Benjamim Lopez Osores',
         descricao: 'são locais onde os usuários do SUS podem receber atendimento médico para diagnóstico e tratamento de cerca de 80% dos problemas de saúde. É nessas unidades que a população tem acesso a medicamentos gratuitos e vacinas, etc.',
     },
     {
         sigla: 'UBS',
-        nome: 'Unidade Básica de Atendimento',
+        nome: 'UBS Parque Delta',
         descricao: 'são locais onde os usuários do SUS podem receber atendimento médico para diagnóstico e tratamento de cerca de 80% dos problemas de saúde. É nessas unidades que a população tem acesso a medicamentos gratuitos e vacinas, etc.',
     },
 ];
