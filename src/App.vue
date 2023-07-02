@@ -8,6 +8,7 @@ import IconMenu from './components/icons/IconMenu.vue';
 
 <template>
     <div>
+        <!-- header e menu do site -->
         <header>
             <div class="menu">
                 <RouterLink to="/">
@@ -27,6 +28,7 @@ import IconMenu from './components/icons/IconMenu.vue';
                 <button class="start">Começar</button>
             </RouterLink>
         </header>
+        <!-- conteudo principal do site -->
         <main>
             <RouterView v-slot="{ Component }" >
                 <Transition name="slide-fade" mode="out-in">

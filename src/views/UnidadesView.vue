@@ -11,6 +11,7 @@ const mapsURL = ref('');
         <p>Encontramos as melhores opções de unidades de atendimentos próximas a você.</p>
         <div class="content">
             <div class="unidades">
+                <!-- card de cada unidade de atendimento -->
                 <div v-for="unidade in unidades" class="unidade" @click="mapsURL = unidade.mapsURL">
                     <h3> {{ unidade.nome }} </h3>
                     <p>{{ unidade.endereco }}</p>
