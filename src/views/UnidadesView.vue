@@ -3,6 +3,11 @@ import { ref } from 'vue';
 import unidades from '../assets/unidades.js';
 
 const mapsURL = ref('');
+const active = ref();
+const setActive = unidadeIndex => {
+    mapsURL.value = unidades[unidadeIndex].mapsURL;
+    active.value = unidadeIndex;
+}
 </script>
 
 <template>
@@ -12,7 +17,12 @@ const mapsURL = ref('');
         <div class="content">
             <div class="unidades">
                 <!-- card de cada unidade de atendimento -->
-                <div v-for="unidade in unidades" class="unidade" @click="mapsURL = unidade.mapsURL">
+                <div
+                    v-for="(unidade, i) in unidades"
+                    class="unidade"
+                    :class="{active: (active === i)}"
+                    @click="setActive(i)"
+                >
                     <h3> {{ unidade.nome }} </h3>
                     <p>{{ unidade.endereco }}</p>
                     <p><strong>Horário de funcionamento: </strong>{{ unidade.horario }}</p>
@@ -35,15 +45,15 @@ const mapsURL = ref('');
     width: 60%;
 }
 .unidade{
-    background-color: var(--light-blue);
+    background-color: var(--lighter-blue);
     margin: 0 auto 1em;
     border-radius: 7px;
     padding: 1.5em;
     cursor: pointer;
-}
-.unidade:hover{
-    background-color: var(--lighter-blue);
     transition: .3s;
+}
+.unidade:hover, .active{
+    background-color: var(--light-blue);
 }
 
 .map{
