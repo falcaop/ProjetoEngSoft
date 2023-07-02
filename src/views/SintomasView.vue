@@ -1,23 +1,18 @@
 <script setup>
-import { watch, ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import sintomas from '../assets/sintomas.js';
 
 const router = useRouter();
 
 const intensidade = ['Baixa', 'Média', 'Alta'];
-const sintomas = ['dor de cabeca', 'nausea'];
-const info = ref({
-    'dor de cabeca': {
-        'checked': false,
-        'intensidade': 0,
-    },
-    'nausea': {
-        'checked': false,
-        'intensidade': 0,
-    },
-});
-const submitForm = () =>{
-    router.push('/unidades')
+
+// Mantém as informações inseridas pelo usuário sobre cada sintoma
+const sintomasRef = ref(sintomas);
+
+const submitForm = () => {
+    console.log(sintomasRef.value);
+    router.push('/unidades');
 }
 </script>
 
@@ -38,15 +33,15 @@ const submitForm = () =>{
                 </div>
             </div>
             <h3>Sintomas</h3>
-            <div v-for="sintoma in sintomas" class="sintoma">
+            <div v-for="(sintoma, id) in sintomasRef" class="sintoma">
                 <div class="checkbox">
-                    <input type="checkbox" :name="sintoma" :value="sintoma" v-model="info[sintoma].checked"/>
-                    <label :for="sintoma">{{ sintoma }}</label>
+                    <input type="checkbox" :name="id" :value="sintoma.checked" v-model="sintoma.checked"/>
+                    <label :for="id">{{ sintoma.nome }}</label>
                 </div>
-                <div class="details" v-if="info[sintoma].checked">
+                <div class="details" v-if="sintoma.checked">
                     <label for="intensidade">Intensidade:</label>
-                    <input type="range" name="intensidade" min="0" max="2" step="1" v-model="info[sintoma].intensidade"/>
-                    <strong>{{ intensidade[info[sintoma].intensidade] }}</strong>
+                    <input type="range" name="intensidade" min="0" max="2" step="1" v-model.number="sintoma.intensidade"/>
+                    <strong>{{ intensidade[sintoma.intensidade] }}</strong>
                 </div>
             </div>
             <div class="submit">
