@@ -16,7 +16,7 @@ const intensidade = 0;
 </script>
 
 <template>
-    <main>
+    <section>
         <h2>Cadastro de sintomas</h2>
         <form>
             Localizacao:
@@ -24,6 +24,10 @@ const intensidade = 0;
                 <div>
                     <label for='address'>Endereco</label>
                     <input type="address" name="address"/>
+                    <div class="locationCheck">
+                        <input type="checkbox" name="location" class="locationCheck">
+                        <label for="location">Usar localização atual</label>
+                    </div>
                 </div>
             </div>
             Sintomas:
@@ -39,15 +43,12 @@ const intensidade = 0;
                 </div>
             </div>
         </form>
-    </main>
+    </section>
 </template>
 
 <style scoped>
-main{
-    margin: 4em auto;
-}
 .sintoma, .address{
-    background-color: var(--blue);
+    background-color: var(--light-blue);
     width: 100%;
     margin: 1em auto 2em;
     border-radius: 7px;
@@ -72,7 +73,7 @@ input[type="address"]{
 }
 
 .details{
-    background-color: var(--light-blue);
+    background-color: #c2d4e4;
 }
 .details > *{
     display: block;
@@ -85,4 +86,11 @@ strong{
 .address > *{
     display: block;
 }
+.locationCheck{
+    margin-top: 1em;
+}
+.locationCheck > input[type="checkbox"]{
+    margin: 0 0.5em 0 0;
+}
+
 </style>

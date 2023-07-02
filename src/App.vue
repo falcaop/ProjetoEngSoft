@@ -18,8 +18,8 @@ import IconMenu from './components/icons/IconMenu.vue';
                 <nav>
                     <RouterLink to="/">Início</RouterLink>
                     <RouterLink to="/about">Sobre</RouterLink>
-                    <RouterLink to="/coisa1">Unidades</RouterLink>
-                    <RouterLink to="/coisa2">Sintomas</RouterLink>
+                    <RouterLink to="/unidades">Unidades</RouterLink>
+                    <RouterLink to="/sintomas">Sintomas</RouterLink>
                 </nav>
             </div>
             <h3>Tá doente?</h3>
@@ -95,10 +95,6 @@ header button{
 }
 header button:hover{
     background-color: hsl(208, 37%, 65%);
-}
-main{
-    width: 80%;
-    margin: 20px auto;
 }
 footer{
     color: white;
