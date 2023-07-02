@@ -17,15 +17,14 @@ import IconMenu from './components/icons/IconMenu.vue';
                 <IconMenu/>
                 <nav>
                     <RouterLink to="/">Início</RouterLink>
-                    <RouterLink to="/about">Sobre</RouterLink>
                     <RouterLink to="/unidades">Unidades</RouterLink>
                     <RouterLink to="/sintomas">Sintomas</RouterLink>
                 </nav>
             </div>
             <h3>Tá doente?</h3>
-            <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento</p>
+            <p>Cadastre seu sintomas e receba uma recomendação de unidade de atendimento.</p>
             <RouterLink to="/sintomas">
-                <button>Cadastrar sintomas</button>
+                <button>Começar</button>
             </RouterLink>
         </header>
         <main>

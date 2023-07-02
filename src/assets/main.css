@@ -1,6 +1,7 @@
 :root{
-    --blue: #6684A0;
+    --blue: #3b557c;
     --light-blue: #99B6D0;
+    --lighter-blue: #d1e0ee;
 }
 body {
     color: black;
@@ -24,18 +25,18 @@ section{
 }
 
 main{
-    width: 60%;
+    width: 70%;
     margin: 4em auto;
     
 }
 @media screen and (max-width: 1023px) {
     main{
-        width: 70%;
+        width: 80%;
     }
 }
 
 @media screen and (max-width: 767px) {
     main{
-        width: 80%;
+        width: 90%;
     }
 }
