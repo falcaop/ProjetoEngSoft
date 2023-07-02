@@ -1,6 +1,7 @@
 <script setup>
 import { watch, ref } from 'vue';
 
+const intensidade = ['Baixa', 'Média', 'Alta'];
 const sintomas = ['dor de cabeca', 'nausea'];
 const info = ref({
     'dor de cabeca': {
@@ -12,17 +13,17 @@ const info = ref({
         'intensidade': 0,
     },
 });
-const intensidade = 0;
 </script>
 
 <template>
     <section>
         <h2>Cadastro de sintomas</h2>
+        <div>Informe seu endereço e selecione os sintomas que está sentindo para receber uma recomendação de unidade de atendimento.</div>
         <form>
-            Localizacao:
+            <h3>Localização</h3>
             <div class='address'>
                 <div>
-                    <label for='address'>Endereco</label>
+                    <label for='address'>Endereço</label>
                     <input type="address" name="address"/>
                     <div class="locationCheck">
                         <input type="checkbox" name="location" class="locationCheck">
@@ -30,16 +31,16 @@ const intensidade = 0;
                     </div>
                 </div>
             </div>
-            Sintomas:
+            <h3>Sintomas</h3>
             <div v-for="sintoma in sintomas" class="sintoma">
                 <div class="checkbox">
                     <input type="checkbox" :name="sintoma" :value="sintoma" v-model="info[sintoma].checked"/>
                     <label :for="sintoma">{{ sintoma }}</label>
                 </div>
                 <div class="details" v-if="info[sintoma].checked">
-                    <label for="intensidade">Intensidade</label>
-                    <input type="range" name="intensidade" min="0" max="10" step="1" v-model="info[sintoma].intensidade"/>
-                    <strong>{{ info[sintoma].intensidade }}</strong>
+                    <label for="intensidade">Intensidade:</label>
+                    <input type="range" name="intensidade" min="0" max="2" step="1" v-model="info[sintoma].intensidade"/>
+                    <strong>{{ intensidade[info[sintoma].intensidade] }}</strong>
                 </div>
             </div>
         </form>
@@ -50,7 +51,7 @@ const intensidade = 0;
 .sintoma, .address{
     background-color: var(--light-blue);
     width: 100%;
-    margin: 1em auto 2em;
+    margin: 1em auto 1em;
     border-radius: 7px;
 }
 .checkbox, .details, .address > div{
@@ -73,11 +74,13 @@ input[type="address"]{
 }
 
 .details{
-    background-color: #c2d4e4;
+    background-color: var(--lighter-blue);
+    border: solid 2px var(--light-blue);
 }
 .details > *{
     display: block;
     width: 100%;
+    max-width: 500px;
     margin-bottom: 0.5em;
 }
 strong{

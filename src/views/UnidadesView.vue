@@ -17,6 +17,7 @@ const info = ref({
         <h2>Unidades de atendimento</h2>
         <div class="content">
             <div class="unidades">
+                <p>Encontramos as melhores opções de unidades de atendimentos próximas a você.</p>
                 <div class="unidade" v-for="unidade in info">
                     <h3> {{ unidade.nome }} </h3>
                     <p>{{ unidade.endereco }}</p>
@@ -35,15 +36,34 @@ const info = ref({
     display: flex;
     justify-content: space-between;
     gap: 2em;
-    flex: 1;
 }
 .unidades{
-    width: 100%;
+    width: 60%;
 }
 .unidade{
     background-color: var(--light-blue);
-    margin: 0 auto 2em;
+    margin: 0 auto 1em;
     border-radius: 7px;
     padding: 1.5em;
+}
+
+.map{
+    width: 40%;
+}
+.map img{
+    width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+    .content{
+        display: block;
+    }
+    .map{
+        margin-top: 2em;
+        width: 100%;
+    }
+    .map img, .unidades{
+        width: 100%;
+    }
 }
 </style>
