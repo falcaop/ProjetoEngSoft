@@ -1,3 +1,4 @@
+// dados das unidades de atendimento cadastradas no sistema
 const unidades = [
     {
         nome: 'UBS Posto de Saúde',

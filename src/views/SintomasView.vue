@@ -21,6 +21,7 @@ const submitForm = () => {
         <h2>Cadastro de sintomas</h2>
         <p>Informe seu endereço e selecione os sintomas que está sentindo para receber uma recomendação de unidade de atendimento.</p>
         <form>
+            <!-- seção "localização" do formulário-->
             <h3>Localização</h3>
             <div class='address'>
                 <div>
@@ -32,12 +33,15 @@ const submitForm = () => {
                     </div>
                 </div>
             </div>
+            <!-- seção "sintomas" do formulário -->
             <h3>Sintomas</h3>
             <div v-for="(sintoma, id) in sintomasRef" class="sintoma">
+                <!-- card de cada sintoma -->
                 <div class="checkbox">
                     <input type="checkbox" :name="id" :value="sintoma.checked" v-model="sintoma.checked"/>
                     <label :for="id">{{ sintoma.nome }}</label>
                 </div>
+                <!-- detalhes de cada sintoma-->
                 <div class="details" v-if="sintoma.checked">
                     <label for="intensidade">Intensidade:</label>
                     <input type="range" name="intensidade" min="0" max="2" step="1" v-model.number="sintoma.intensidade"/>

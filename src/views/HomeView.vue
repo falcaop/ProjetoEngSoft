@@ -1,5 +1,7 @@
 <script setup>
 import FacilityCard from '../components/FacilityCard.vue';
+
+// informacoes sobre os tipos de unidade de atendimento
 const facilities = [
     {
         sigla: 'UBS',
