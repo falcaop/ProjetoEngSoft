@@ -28,7 +28,7 @@ Acesse o diretório criado para o repositório:
 cd ProjetoEngSoft
 ```
 
-Instale as dependências necessárias para o funcionamento do projeto, com o comando:
+Num sistema que possui Node.js e npm, instale as dependências necessárias para o funcionamento do projeto com o comando:
 ```bash
 npm i
 ```
